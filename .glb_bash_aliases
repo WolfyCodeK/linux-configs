@@ -1,0 +1,103 @@
+# fzf Key bindings (CTRL-T, CTRL-R, and ALT-C)
+
+# list of eza ==> https://denshub.com/en/best-ls-command-alternative/
+alias ld='eza -lD'
+alias lf='eza -lF --color=always | grep -v /'
+alias lh='eza -dl .* --group-directories-first'
+alias ll='eza -al --group-directories-first'
+alias ls='eza -alF --color=always --sort=size | grep -v /'
+alias lt='eza -al --sort=modified'
+
+# pygmentize
+alias pcat='pygmentize -g'
+
+# cd
+alias ..='cd ..'
+alias ...='cd ../..'
+alias home='cd $HOME'
+alias back='envd; home' 
+
+# global bash
+alias dga='home; pcat .glb_bash_aliases; cd $OLDPWD'
+alias ega='home; vim .glb_bash_aliases'
+alias ra='. ~/.bashrc; cd $OLDPWD'
+
+# local bash
+alias dla='home; pcat .lcl_bash_aliases; cd $OLDPWD'
+alias ela='home; vim .lcl_bash_aliases'
+
+# todo
+alias etodo='home; vim todolist;'
+
+# c/cpp compiler
+ccompile() {
+    gcc -c "$1" -o "${1%.c}.o"
+}
+
+cbuild() {
+    local output_filename
+    local args=("$@")  # Store all arguments in an array
+    local last_index=$(( ${#args[@]} - 1 ))  # Get the index of the last argument
+
+    output_filename="${args[$last_index]}"  # Retrieve the last argument as the output filename
+    unset 'args[$last_index]'  # Remove the last argument from the array
+
+    gcc "${args[@]}" -o "$output_filename" && ./"$output_filename"
+}
+
+cppbuild() {
+    local output_filename
+    local args=("$@")
+    local last_index=$(( ${#args[@]} - 1 ))
+	
+    output_filename="${args[$last_index]}"
+    unset 'args[$last_index]'
+
+    g++ --std=c++11 "${args[@]}" -o "$output_filename" && ./"$output_filename"
+}
+
+# git
+gpush() {
+    local branch="$1"
+    git push -u origin "$branch"
+}
+
+gall() {
+    local msg="$1"
+    local branch="$2"
+
+    git add .
+    git commit -m "$msg"
+    git push -u origin "$branch"
+}
+
+alias glines='git ls-files | xargs wc -l'
+
+# python
+alias enva3.9='virtualenv -p /usr/bin/python3.9 env'
+alias enva='source env/bin/activate; source env/Scripts/activate'
+alias envd='deactivate'
+alias envn='python3 -m venv env'
+alias envrm='rm -rf env'
+alias pyver='p3 --version'
+alias tsbo='tensorboard --logdir=runs'
+alias p3='python3'
+
+# spicetify
+alias spice='spicetify restore backup apply'
+
+# Laravel
+alias sail='vendor/bin/sail'
+alias fssail='sail artisan migrate:fresh --seed' 
+
+# yt-dlp
+alias tomp3='yt-dlp -x --audio-format mp3'
+alias tomp4='yt-dlp -f bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best -o "%(title)s.%(ext)s"'
+
+# Crontab
+alias ct="crontab -e"
+
+# Secure Copy Protocol
+sshcp() {
+    scp -r "$1:$2" "$3"
+}
