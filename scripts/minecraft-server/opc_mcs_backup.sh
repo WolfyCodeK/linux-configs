@@ -5,7 +5,7 @@ REMOTE_FOLDER="/home/opc/world"
 LOCAL_DIR="/mnt/d/DATA/opc-server-backups"
 
 # Date and time format for folder renaming
-TIMESTAMP=$(date +"%m%d%Y-%H%M")
+TIMESTAMP=$(date +"%d%m%Y-%H%M")
 
 # Step 1: SCP the world folder from the remote machine
 scp -r mcs:"$REMOTE_FOLDER" "$LOCAL_DIR"
