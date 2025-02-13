@@ -8,6 +8,15 @@ alias ll='eza -al --group-directories-first'
 alias ls='eza -alF --color=always --sort=size | grep -v /'
 alias lt='eza -al --sort=modified'
 
+# general util
+alias size="du -sh"
+
+# screen
+alias sr="screen -r"
+alias sn="screen -S"
+alias sl="screen -ls"
+alias ssa='screen -ls | grep -o '\''[0-9]*\.[^[:space:]]*'\'' | while read session; do screen -S "$session" -X quit; done'
+
 # pygmentize
 alias pcat='pygmentize -g'
 
@@ -101,3 +110,5 @@ alias ct="crontab -e"
 sshcp() {
     scp -r "$1:$2" "$3"
 }
+
+

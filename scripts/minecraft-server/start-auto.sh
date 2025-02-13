@@ -62,13 +62,13 @@ if ! screen -list | grep -q "$MONITOR_SCREEN_NAME"; then
 # Clear the screen
 clear
 
-# Define whitelist of players that won't trigger Discord notifications
-NOTIFICATION_WHITELIST=("nostarstonight" "player2" "player3")
+# Define whitelist of trusted players
+WHITELIST=("nostarstonight" "player2" "player3")
 
 # Function to check if a player is whitelisted
 is_player_whitelisted() {
     local player="$1"
-    for whitelisted in "${NOTIFICATION_WHITELIST[@]}"; do
+    for whitelisted in "${WHITELIST[@]}"; do
         if [ "$player" = "$whitelisted" ]; then
             return 0  # true, player is whitelisted
         fi
@@ -161,12 +161,17 @@ tail -F -n0 "$LOG_FILE" | while read -r line; do
         # Always log to monitor
         log_monitor "Player joined: $player_name"
         
-        # Send discord notification if player is not whitelisted
+        # Handle non-whitelisted player joins
         if ! is_player_whitelisted "$player_name"; then
+            # Send Discord notification
             curl -H "Content-Type: application/json" \
                  -X POST \
                  -d "{\"content\":\":green_heart: $player_name joined the game\"}" \
-                 "$DISCORD_WEBHOOK" 
+                 "$DISCORD_WEBHOOK"
+            
+            # Run backup script
+            log_monitor "Running backup for non-whitelisted player join: $player_name"
+            /home/opc/scripts/backup.sh
         fi
     fi
 
