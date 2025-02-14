@@ -29,7 +29,8 @@ alias back='envd; home'
 # global bash
 alias dga='home; pcat .glb_bash_aliases; cd $OLDPWD'
 alias ega='home; vim .glb_bash_aliases'
-alias ra='. ~/.bashrc; cd $OLDPWD'
+alias ra='. ~/.bashrc'
+alias cdb='cd $OLDPATH'
 
 # local bash
 alias dla='home; pcat .lcl_bash_aliases; cd $OLDPWD'
@@ -111,4 +112,6 @@ sshcp() {
     scp -r "$1:$2" "$3"
 }
 
-
+# Opc mcs quick binds
+alias mcsb="./scripts/minecraft-server/opc-mcs-secure-backup.sh"
+alias mclb="./scripts/minecraft-server/opc-mcs-latest-backup.sh"
