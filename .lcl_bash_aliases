@@ -1,0 +1,51 @@
+# opening apps
+alias music='home; ...; ./mnt/c/Users/isaac/AppData/Roaming/Spotify/spotify.exe; cdb'
+alias vedit='home; ...; ./mnt/c/Program\ Files/Adobe/Adobe\ Premiere\ Pro\ 2024/Adobe\ Premiere\ Pro.exe; cdb'
+#alias web='home; ...; ./mnt/c/Program\ Files/Mozilla\ Firefox/firefox.exe; cdb'
+alias web='cmd.exe /c start "" "C:\Program Files\Mozilla Firefox\firefox.exe" -new-tab "www.google.com"'
+alias rl='home; ...; ./mnt/d/Games/Epic\ Games/rocketleague/Binaries/Win64/RocketLeague.exe; cdb'
+alias osu='home; ...; ./mnt/d/Games/osu!/osu!.exe; cdb'
+alias pubg='cmd.exe /c "start cmd.exe /k wsl.exe --cd /mnt/d/DATA/VSCode/Python/pubg-follower/dist -- ./run_pubg.sh"'
+alias steam='home; ...; ./mnt/c/Program\ Files\ \(x86\)/Steam/steam.exe; cdb'
+alias flag='home; ...; cd /mnt/d/DATA/"Flag Guesser"; ./Flag\ Guesser.exe; cdb'
+alias mc='home; ...; ./mnt/c/"Program Files (x86)"/Minecraft\ Launcher/MinecraftLauncher.exe; cdb'
+
+# changing directories
+alias data='home; ...; cd mnt/d/DATA'
+alias vsc='home; ...; cd mnt/d/DATA/VSCode'
+alias mp3='home; ...; cd mnt/d/DATA/Audio; tomp3'
+alias mp4='home; ...; cd mnt/d/DATA/Video; tomp4'
+
+# tetris project
+tetris-ai() {
+	local size="$1"
+	local aps="$2"
+
+    	if [ "$size" == "--help" ]; then
+		echo "tetris-ai -screen_size -actions_per_second"
+    	else
+		home 
+		vsc 
+        	cd Python/Tetris
+    		enva
+		pip install -r requirements.txt
+    		p3 test_model.py "$size" "$aps"	
+    	fi
+}
+
+tetris() {
+	home
+	vsc
+	cd Python/Tetris
+	enva
+	pip install -r requirements.txt
+	p3 manual_play.py
+}
+
+# random experiments
+52fac() {
+	home
+	vsc
+	cd CPP/52fac
+	g++ -O2 -std=c++17 -fopenmp -o 52facnoti 52facnoti.cpp && ./52facnoti
+}

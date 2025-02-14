@@ -10,6 +10,9 @@ alias lt='eza -al --sort=modified'
 
 # general util
 alias size="du -sh"
+alias cl='clear'
+alias exp='explorer.exe "::{20d04fe0-3aea-1069-a2d8-08002b30309d}"'
+alias exph='explorer.exe .'
 
 # screen
 alias sr="screen -r"
@@ -35,6 +38,14 @@ alias cdb='cd $OLDPATH'
 # local bash
 alias dla='home; pcat .lcl_bash_aliases; cd $OLDPWD'
 alias ela='home; vim .lcl_bash_aliases'
+
+apps() {
+    # Extract alias names that launch apps (exclude those that only change directories and don't execute apps)
+    grep -E "^alias " ~/.lcl_bash_aliases | grep -v "cd [^/]*$" | sed -E 's/^alias ([^=]+)=.*/\1/'
+
+    # Extract function names that are not followed by "cd" (allow hyphens in function names)
+    grep -E "^[a-zA-Z0-9_-]+\(\)" ~/.lcl_bash_aliases | awk -F'(' '{print $1}' | grep -v -E "cd|function"
+}
 
 # todo
 alias etodo='home; vim todolist;'
@@ -82,6 +93,8 @@ gall() {
 }
 
 alias glines='git ls-files | xargs wc -l'
+alias gstat='git status'
+alias gdiff=' git diff'
 
 # python
 alias enva3.9='virtualenv -p /usr/bin/python3.9 env'
@@ -96,7 +109,7 @@ alias p3='python3'
 # spicetify
 alias spice='spicetify restore backup apply'
 
-# Laravel
+# laravel
 alias sail='vendor/bin/sail'
 alias fssail='sail artisan migrate:fresh --seed' 
 
@@ -104,14 +117,16 @@ alias fssail='sail artisan migrate:fresh --seed'
 alias tomp3='yt-dlp -x --audio-format mp3'
 alias tomp4='yt-dlp -f bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best -o "%(title)s.%(ext)s"'
 
-# Crontab
-alias ct="crontab -e"
+# crontab
+alias ct='crontab -e'
 
-# Secure Copy Protocol
+# secure copy protocol
 sshcp() {
     scp -r "$1:$2" "$3"
 }
 
-# Opc mcs quick binds
-alias mcsb="./scripts/minecraft-server/opc-mcs-secure-backup.sh"
-alias mclb="./scripts/minecraft-server/opc-mcs-latest-backup.sh"
+# script shortcuts
+alias mcsb='./scripts/minecraft-server/opc-mcs-secure-backup.sh'
+alias mclb='./scripts/minecraft-server/opc-mcs-latest-backup.sh'
+
+alias wintowslpath='./scripts/win-to-wsl-path.sh'
