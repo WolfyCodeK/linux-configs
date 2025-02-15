@@ -129,4 +129,4 @@ sshcp() {
 alias mcsb='./scripts/minecraft-server/opc-mcs-secure-backup.sh'
 alias mclb='./scripts/minecraft-server/opc-mcs-latest-backup.sh'
 
-alias wintowslpath='./scripts/win-to-wsl-path.sh'
+alias wtwp='./scripts/win-to-wsl-path.sh'

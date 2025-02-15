@@ -1,14 +1,13 @@
 # opening apps
-alias music='home; ...; ./mnt/c/Users/isaac/AppData/Roaming/Spotify/spotify.exe; cdb'
-alias vedit='home; ...; ./mnt/c/Program\ Files/Adobe/Adobe\ Premiere\ Pro\ 2024/Adobe\ Premiere\ Pro.exe; cdb'
-#alias web='home; ...; ./mnt/c/Program\ Files/Mozilla\ Firefox/firefox.exe; cdb'
+alias music='home; ...; ./mnt/c/Users/isaac/AppData/Roaming/Spotify/spotify.exe & disown; cdb;'
+alias vedit='home; ...; ./mnt/c/Program\ Files/Adobe/Adobe\ Premiere\ Pro\ 2024/Adobe\ Premiere\ Pro.exe & disown; cdb'
 alias web='cmd.exe /c start "" "C:\Program Files\Mozilla Firefox\firefox.exe" -new-tab "www.google.com"'
-alias rl='home; ...; ./mnt/d/Games/Epic\ Games/rocketleague/Binaries/Win64/RocketLeague.exe; cdb'
-alias osu='home; ...; ./mnt/d/Games/osu!/osu!.exe; cdb'
+alias rl='home; ...; ./mnt/d/Games/Epic\ Games/rocketleague/Binaries/Win64/RocketLeague.exe & disown; cdb'
+alias osu='cmd.exe /c "start cmd.exe /k wsl.exe --cd /mnt/c/Users/isaac/Documents/OpenTabletDriver -- ./OpenTabletDriver.Daemon.exe"; home; ...; ./mnt/c/Users/isaac/Documents/OpenTabletDriver/OpenTabletDriver.UX.Wpf.exe & disown; ./mnt/d/Games/osu!/osu!.exe & disown; ./mnt/c/Users/isaac/AppData/Local/Programs/Rewind/Rewind.exe & disown; cdb'
 alias pubg='cmd.exe /c "start cmd.exe /k wsl.exe --cd /mnt/d/DATA/VSCode/Python/pubg-follower/dist -- ./run_pubg.sh"'
-alias steam='home; ...; ./mnt/c/Program\ Files\ \(x86\)/Steam/steam.exe; cdb'
-alias flag='home; ...; cd /mnt/d/DATA/"Flag Guesser"; ./Flag\ Guesser.exe; cdb'
-alias mc='home; ...; ./mnt/c/"Program Files (x86)"/Minecraft\ Launcher/MinecraftLauncher.exe; cdb'
+alias steam='home; ...; ./mnt/c/Program\ Files\ \(x86\)/Steam/steam.exe & disown; cdb'
+alias flag='home; ...; cd /mnt/d/DATA/"Flag Guesser"; ./Flag\ Guesser.exe & disown; cdb'
+alias mc='home; ...; ./mnt/c/"Program Files (x86)"/Minecraft\ Launcher/MinecraftLauncher.exe & disown; cdb'
 
 # changing directories
 alias data='home; ...; cd mnt/d/DATA'
