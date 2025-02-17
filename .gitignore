@@ -1,0 +1,8 @@
+*
+!.gitignore
+!.glb_bash_aliases
+!.lcl_bash_aliases
+!scripts/
+!scripts/**
+scripts/minecraft-server/managment-properties/*
+
