@@ -29,15 +29,19 @@ alias ...='cd ../..'
 alias home='cd $HOME'
 alias back='envd; home' 
 
+# tree
+alias lstree='tree -CL 3'
+
 # global bash
-alias dga='home; pcat .glb_bash_aliases; cd $OLDPWD'
-alias ega='home; vim .glb_bash_aliases'
-alias ra='. ~/.bashrc'
 alias cdb='cd $OLDPATH'
+alias dga='home; pcat .glb_bash_aliases; cdb'
+alias ega='home; vim .glb_bash_aliases;'
+alias ra='. ~/.bashrc'
+alias ebrc='home; vim .bashrc;'
 
 # local bash
-alias dla='home; pcat .lcl_bash_aliases; cd $OLDPWD'
-alias ela='home; vim .lcl_bash_aliases'
+alias dla='home; pcat .lcl_bash_aliases; cdb'
+alias ela='home; vim .lcl_bash_aliases;'
 
 apps() {
     # Extract alias names that launch apps (exclude those that only change directories and don't execute apps)
@@ -106,6 +110,9 @@ alias envrm='rm -rf env'
 alias pyver='p3 --version'
 alias tsbo='tensorboard --logdir=runs'
 alias p3='python3'
+
+# tauri
+alias nrtd='npm run tauri dev'
 
 # spicetify
 alias spice='spicetify restore backup apply'
