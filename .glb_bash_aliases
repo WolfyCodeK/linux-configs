@@ -92,6 +92,7 @@ gall() {
     git push -u origin "$branch"
 }
 
+alias gpull='git pull --ff-only'
 alias glines='git ls-files | xargs wc -l'
 alias gstat='git status'
 alias gdiff=' git diff'
