@@ -96,6 +96,7 @@ gall() {
     git push -u origin "$branch"
 }
 
+alias gbase='git pull --rebase'
 alias gpull='git pull --ff-only'
 alias glines='git ls-files | xargs wc -l'
 alias gstat='git status'
@@ -103,9 +104,9 @@ alias gdiff=' git diff'
 
 # python
 alias enva3.9='virtualenv -p /usr/bin/python3.9 env'
-alias enva='source env/bin/activate; source env/Scripts/activate'
+alias enva='source venv/bin/activate; source venv/Scripts/activate'
 alias envd='deactivate'
-alias envn='python3 -m venv env'
+alias envn='python3 -m venv venv'
 alias envrm='rm -rf env'
 alias pyver='p3 --version'
 alias tsbo='tensorboard --logdir=runs'
@@ -124,6 +125,15 @@ alias fssail='sail artisan migrate:fresh --seed'
 # yt-dlp
 alias tomp3='yt-dlp -x --audio-format mp3'
 alias tomp4='yt-dlp -f bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best -o "%(title)s.%(ext)s"'
+
+# ffmpeg
+vcrop() {
+    ffmpeg -i "$1" -ss $(date -d@"$2" -u +%H:%M:%S) -to $(date -d@"$3" -u +%H:%M:%S) -c copy "${1%.*}_cropped.${1##*.}"
+}
+
+vcomp() {
+    ffmpeg -i "$1" -vcodec libx264 -crf "$2" -preset fast -c:a aac -b:a 128k "${1%.*}_compressed.mp4"
+}
 
 # crontab
 alias ct='crontab -e'
