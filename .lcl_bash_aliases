@@ -4,13 +4,14 @@ alias vedit='home; ...; ./mnt/c/Program\ Files/Adobe/Adobe\ Premiere\ Pro\ 2024/
 alias web='home; ...; cmd.exe /c start "" "C:\Program Files\Mozilla Firefox\firefox.exe" -new-tab "www.google.com"'
 alias rl='home; ...; ./mnt/d/Games/Epic\ Games/rocketleague/Binaries/Win64/RocketLeague.exe & disown; cdb'
 alias osu='home; ...; cmd.exe /c "start cmd.exe /k wsl.exe --cd /mnt/c/Users/isaac/Documents/OpenTabletDriver -- ./OpenTabletDriver.Daemon.exe"; home; ...; ./mnt/c/Users/isaac/Documents/OpenTabletDriver/OpenTabletDriver.UX.Wpf.exe & disown; ./mnt/d/Games/osu!/osu!.exe & disown; ./mnt/c/Users/isaac/AppData/Local/Programs/Rewind/Rewind.exe & disown; cdb'
-alias pubg='home; ...; cmd.exe /c "start cmd.exe /k wsl.exe --cd /mnt/d/DATA/VSCode/Python/pubg-follower/dist -- ./run_pubg.sh"; cdb'
+alias pubg='home; ...; cmd.exe /c "start cmd.exe /k wsl.exe --cd /mnt/d/DATA/VSCode/Python/pubg-follower/output -- ./pubg-auto-follower.exe"; cdb'
 alias steam='home; ...; ./mnt/c/Program\ Files\ \(x86\)/Steam/steam.exe & disown; cdb'
 alias flag='home; ...; cd /mnt/d/DATA/"Flag Guesser"; ./Flag\ Guesser.exe & disown; cdb'
 alias mc='home; ...; ./mnt/c/"Program Files (x86)"/Minecraft\ Launcher/MinecraftLauncher.exe & disown; cdb'
 
 # changing directories
 alias data='home; ...; cd mnt/d/DATA'
+alias desktop='home; ...; cd mnt/c/Users/isaac/Desktop'
 alias vsc='home; ...; cd mnt/d/DATA/VSCode'
 alias mp3='home; ...; cd mnt/d/DATA/Audio; tomp3'
 alias mp4='home; ...; cd mnt/d/DATA/Video; tomp4'
