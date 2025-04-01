@@ -1,0 +1,118 @@
+# aliases help - list all aliases with descriptions
+h() {
+    echo -e "\033[1;36m=== Global Aliases ===\033[0m"
+    echo ""
+
+    # Directory listing aliases
+    echo -e "\033[1;33mDirectory Listing\033[0m"
+    echo -e "\033[1;32mld\033[0m - List only directories using eza"
+    echo -e "\033[1;32mlf\033[0m - List only files using eza with colors"
+    echo -e "\033[1;32mlh\033[0m - List hidden files and directories"
+    echo -e "\033[1;32mll\033[0m - List all files and directories in long format"
+    echo -e "\033[1;32mls\033[0m - List all files sorted by size"
+    echo -e "\033[1;32mlt\033[0m - List all files sorted by modification time"
+    echo ""
+
+    # General utilities
+    echo -e "\033[1;33mGeneral Utilities\033[0m"
+    echo -e "\033[1;32msize\033[0m - Show disk usage of files/directories in human-readable format"
+    echo -e "\033[1;32mcl\033[0m - Clear terminal screen"
+    echo -e "\033[1;32mexp\033[0m - Open Windows Explorer in current directory"
+    echo -e "\033[1;32mexph\033[0m - Open Windows Explorer in current directory" 
+    echo -e "\033[1;32mwatch\033[0m - Watch directory size changes in real-time"
+    echo -e "\033[1;32mpcat\033[0m - Display file with syntax highlighting using pygmentize"
+    echo ""
+
+    # Screen management
+    echo -e "\033[1;33mScreen Management\033[0m"
+    echo -e "\033[1;32msr\033[0m - Screen reattach"
+    echo -e "\033[1;32msn\033[0m - Create new screen session"
+    echo -e "\033[1;32msl\033[0m - List screen sessions"
+    echo -e "\033[1;32mssa\033[0m - Kill all screen sessions"
+    echo ""
+
+    # Navigation
+    echo -e "\033[1;33mNavigation\033[0m"
+    echo -e "\033[1;32m..\033[0m - Go up one directory"
+    echo -e "\033[1;32m...\033[0m - Go up two directories"
+    echo -e "\033[1;32mhome\033[0m - Go to home directory"
+    echo -e "\033[1;32mback\033[0m - Deactivate virtual environment and go home"
+    echo -e "\033[1;32mlstree\033[0m - Show directory tree with 3 level depth"
+    echo ""
+
+    # Bash Configuration
+    echo -e "\033[1;33mBash Configuration\033[0m"
+    echo -e "\033[1;32mcdb\033[0m - Return to previous directory"
+    echo -e "\033[1;32mdga\033[0m - Display global aliases"
+    echo -e "\033[1;32mega\033[0m - Edit global aliases"
+    echo -e "\033[1;32meha\033[0m - Edit helper aliases"
+    echo -e "\033[1;32mra\033[0m - Reload bashrc"
+    echo -e "\033[1;32mebrc\033[0m - Edit bashrc"
+    echo -e "\033[1;32mdla\033[0m - Display local aliases"
+    echo -e "\033[1;32mela\033[0m - Edit local aliases"
+    echo -e "\033[1;32mapps\033[0m - List applications from local aliases"
+    echo -e "\033[1;32metodo\033[0m - Edit todo list"
+    echo ""
+
+    # Development
+    echo -e "\033[1;33mDevelopment\033[0m"
+    echo -e "\033[1;32mccompile\033[0m - Compile C file to object file"
+    echo -e "\033[1;32mcbuild\033[0m - Compile and run C program"
+    echo -e "\033[1;32mcppbuild\033[0m - Compile and run C++ program with C++11 standard"
+    echo ""
+
+    # Git
+    echo -e "\033[1;33mGit\033[0m"
+    echo -e "\033[1;32mgpush\033[0m - Push to a specific branch"
+    echo -e "\033[1;32mgall\033[0m - Add all, commit with message, and push to branch"
+    echo -e "\033[1;32mgbase\033[0m - Pull with rebase"
+    echo -e "\033[1;32mgpull\033[0m - Pull with fast-forward only"
+    echo -e "\033[1;32mglines\033[0m - Count lines of code in repository"
+    echo -e "\033[1;32mgstat\033[0m - Git status"
+    echo -e "\033[1;32mgdiff\033[0m - Git diff"
+    echo ""
+
+    # Python
+    echo -e "\033[1;33mPython\033[0m"
+    echo -e "\033[1;32menva3.9\033[0m - Create Python 3.9 virtual environment"
+    echo -e "\033[1;32menva\033[0m - Activate virtual environment"
+    echo -e "\033[1;32menvd\033[0m - Deactivate virtual environment"
+    echo -e "\033[1;32menvn\033[0m - Create new Python venv"
+    echo -e "\033[1;32menvrm\033[0m - Remove virtual environment"
+    echo -e "\033[1;32mpyver\033[0m - Show Python version"
+    echo -e "\033[1;32mpyreqs\033[0m - Install requirements from requirements.txt"
+    echo -e "\033[1;32mpls\033[0m - List installed pip packages"
+    echo -e "\033[1;32mtsbo\033[0m - Start TensorBoard"
+    echo -e "\033[1;32mpy3\033[0m - Run Python 3"
+    echo -e "\033[1;32mpygrep\033[0m - Search in Python files for a specific term"
+    echo ""
+
+    # Other Tools
+    echo -e "\033[1;33mOther Tools\033[0m"
+    echo -e "\033[1;32mnrtd\033[0m - Run Tauri in development mode"
+    echo -e "\033[1;32mspice\033[0m - Restore Spicetify backup and apply"
+    echo -e "\033[1;32msail\033[0m - Laravel Sail shortcut"
+    echo -e "\033[1;32mfssail\033[0m - Fresh migrate and seed Laravel database"
+    echo -e "\033[1;32mtomp3\033[0m - Download YouTube video as MP3"
+    echo -e "\033[1;32mtomp4\033[0m - Download YouTube video as MP4"
+    echo -e "\033[1;32mvcrop\033[0m - Crop video between timestamps"
+    echo -e "\033[1;32mvcomp\033[0m - Compress video with specified quality"
+    echo -e "\033[1;32mct\033[0m - Edit crontab"
+    echo -e "\033[1;32msshcp\033[0m - Copy files from remote server via SSH"
+    echo ""
+
+    # Script shortcuts
+    echo -e "\033[1;33mScript Shortcuts\033[0m"
+    echo -e "\033[1;32mmcsb\033[0m - Run Minecraft server secure backup script"
+    echo -e "\033[1;32mmclb\033[0m - Run Minecraft server latest backup script"
+    echo -e "\033[1;32mwtwp\033[0m - Convert Windows path to WSL path"
+    echo ""
+
+    # Also show aliases from local bash aliases if the file exists
+    if [ -f "$HOME/.lcl_bash_aliases" ]; then
+        echo -e "\033[1;36m=== Local Aliases ===\033[0m"
+        echo "Use 'dla' to see your local bash aliases"
+    fi
+
+    echo -e "\033[1;36m=====================\033[0m"
+}

@@ -8,6 +8,7 @@ alias pubg='home; ...; cmd.exe /c "start cmd.exe /k wsl.exe --cd /mnt/d/DATA/VSC
 alias steam='home; ...; ./mnt/c/Program\ Files\ \(x86\)/Steam/steam.exe & disown; cdb'
 alias flag='home; ...; cd /mnt/d/DATA/"Flag Guesser"; ./Flag\ Guesser.exe & disown; cdb'
 alias mc='home; ...; ./mnt/c/"Program Files (x86)"/Minecraft\ Launcher/MinecraftLauncher.exe & disown; cdb'
+alias acs='home; ...; cd /mnt/d/DATA/AutoClipSender; ./AutoClipSender.exe & disown; cdb'
 
 # changing directories
 alias data='home; ...; cd mnt/d/DATA'
@@ -15,7 +16,7 @@ alias desktop='home; ...; cd mnt/c/Users/isaac/Desktop'
 alias vsc='home; ...; cd mnt/d/DATA/VSCode'
 alias mp3='home; ...; cd mnt/d/DATA/Audio; tomp3'
 alias mp4='home; ...; cd mnt/d/DATA/Video; tomp4'
-alias cur='home; ...; cd mnt/d/DATA/VSCode/Python/ugs3'
+alias cur='home; ...; cd mnt/d/DATA/VSCode/Python/manual-ugs'
 
 # tetris project
 tetris-ai() {

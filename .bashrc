@@ -109,6 +109,10 @@ if [ -f ~/.lcl_bash_aliases ]; then
     . ~/.lcl_bash_aliases
 fi
 
+if [ -f ~/.h_bash_aliases ]; then
+    . ~/.h_bash_aliases
+fi
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
